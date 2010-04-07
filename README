@@ -1,0 +1,13 @@
+
+GETTING STARTED
+
+- get the sources
+- run mvn assembly:assembly
+- copy target/maven-classpath-deployer-0.0.1-SNAPSHOT-distribution.jar to $JBOSS_HOME/server/default/deployers
+- start AS
+- add a pom.xml to your deployments meta data locations (e.g. META-INF)
+  > all artifacts defined in the pom will be added to the deployments classpath
+
+Known Issues
+ - the resolution is hell slow
+ - it uses the maven dependency algorithm
