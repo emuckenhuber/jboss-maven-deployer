@@ -200,10 +200,9 @@ public class MavenClasspathDeployer extends AbstractVFSParsingDeployer<ClassLoad
             {
                throw new IllegalStateException(vf + " does not exist");
             }
-            log.info("adding artifact " + vf);
             if(debug)
             {
-                              
+               log.debug("adding artifact " + vf);
             }
             // Mount
             Automounter.mount(includedArtifacts, vf);
