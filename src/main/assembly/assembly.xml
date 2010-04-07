@@ -1,0 +1,42 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+  <id>distribution</id>
+  <formats>
+    <format>jar</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <dependencySets>
+    <dependencySet>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+	  <excludes>
+	  	<!-- 
+	  		this actually looks like the reason
+	  		why nobody should use this deployer ;)
+	  	-->
+	  	<exclude>junit:*</exclude>
+	  	<exclude>javassist:*</exclude>
+	  	<exclude>javax.inject:*</exclude>
+	  	<exclude>org.jboss:*</exclude>
+	  	<exclude>org.jboss.cl:*</exclude>
+	  	<exclude>org.jboss.demos:*</exclude>
+	  	<exclude>org.jboss.deployers:*</exclude>
+	  	<exclude>org.jboss.logging:*</exclude>
+	  	<exclude>org.jboss.integration:*</exclude>
+	  	<exclude>org.jboss.man:*</exclude>
+	  	<exclude>org.jboss.kernel:*</exclude>
+	  </excludes>
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+    <fileSet>
+      <directory>target/classes</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+      	<include>META-INF/**</include>
+       	<include>org/jboss/demos/maven/classpath/deployer/**</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

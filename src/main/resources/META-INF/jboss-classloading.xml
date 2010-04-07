@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Try to limit the damage of this deployer -->
+<classloading xmlns="urn:jboss:classloading:1.0"
+              name="jboss-maven-classpath-deployer"
+              domain="jboss-maven-classpath-deployer-domain"
+              parent-first="false"
+              import-all="true">
+   <capabilities>
+      <package name="org.jboss.demo.maven.classpath.deployer"/>
+   </capabilities>
+</classloading>

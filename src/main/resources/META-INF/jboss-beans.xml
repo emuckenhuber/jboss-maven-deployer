@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="urn:jboss:bean-deployer:2.0">
+    <!-- The maven classpath deployer -->
+    <!-- 
+    	Just place a classpath-pom.xml in META-INF, expressing the runtime
+    	(maven) dependencies of the deployment.
+     -->
+    <bean name="MavenClasspathDeployer" class="org.jboss.demos.maven.classpath.deployer.MavenClasspathDeployer">
+    	<!-- 
+    	<property name="settingsFile">file://path/to/settings.xml</property>
+    	<property name="localRepository>file://path/to/local/repository</property>
+    	 -->
+    </bean>
+</deployment>
